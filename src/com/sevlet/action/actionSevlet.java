@@ -49,7 +49,7 @@ public class actionSevlet extends HttpServlet {
 			pstmt.setString(4, tel);
 			
 			// 5. SQL 문장을 실행하고 결과를 리턴 - SQL 문장 실행 후, 변경된 row 수 in type 리턴
-			int row = pstmt.executeUpdate();
+			pstmt.executeQuery();
 		
 			System.out.println("Success");
 		} catch (SQLException ex ) {
@@ -76,7 +76,6 @@ public class actionSevlet extends HttpServlet {
 		}
 		
 		response.sendRedirect("enroll.jsp");
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

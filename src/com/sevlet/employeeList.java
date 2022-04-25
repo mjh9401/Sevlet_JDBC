@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class employeeList extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("list.jsp");
+		response.sendRedirect("search.jsp");
 	}
 
 	
