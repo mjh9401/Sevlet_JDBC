@@ -1,0 +1,19 @@
+CREATE DATABASE company;
+USE company;
+
+CREATE TABLE employee(
+	idx int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name char(50) NOT NULL,
+	address char(50) NOT NULL,
+	email char(50) NOT NULL,
+	tel char(50) NOT null
+);
+SELECT * FROM employee;
+
+INSERT INTO employee 
+SET name = "홍길동",
+address = "서울특별시",
+email = "ass@naver.com",
+tel="010-8889-8888"
+
+SELECT * FROM employee;
