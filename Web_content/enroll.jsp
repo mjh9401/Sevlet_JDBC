@@ -18,13 +18,6 @@
     }
 </style>
 <body>
-	<!--
-    <form action="login" method="get">
-    	아이디 : <input type="text" name = "user_id"><br>
-    	비밀번호 : <input type="text" name="usr_pw"><br>
-    	<input type="submit" value="로그인">
-    </form>
-      -->
     <div class="wrap">
         <h1 class="title">직원등록</h1>
         <form action="actionSevlet" method="get"> 

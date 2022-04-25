@@ -25,10 +25,7 @@ public class actionSevlet extends HttpServlet {
 		String tel = request.getParameter("tel");
 		
 		
-		
 		/*request 값들 null인지 확인 후 db연결 데이터 삽입*/
-		
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
