@@ -1,18 +1,19 @@
+DROP DATABASE IF EXISTS company;
 CREATE DATABASE company;
 USE company;
 
 CREATE TABLE employee(
-	idx int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	name char(50) NOT NULL,
-	address char(50) NOT NULL,
-	email char(50) NOT NULL,
-	tel char(50) NOT null
+	idx INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+	`name` CHAR(50) NOT NULL,
+	address CHAR(50) NOT NULL,
+	email CHAR(50) NOT NULL,
+	tel CHAR(50) NOT NULL
 );
-SELECT * FROM employee;
 
 INSERT INTO employee 
-SET name = "ÌôçÍ∏∏Îèô",
-address = "ÏÑúÏö∏ÌäπÎ≥ÑÏãú",
+SET idx = idx + 1, 
+`name` = "»´±Êµø",
+address = "º≠øÔ∆Ø∫∞Ω√",
 email = "ass@naver.com",
 tel="010-8889-8888"
 

@@ -16,14 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/actionSevlet")
 public class actionSevlet extends HttpServlet {
+	int idx = 0;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idx = 1;
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String email = request.getParameter("email");
 		String tel = request.getParameter("tel");
-		
 		
 		/*request 값들 null인지 확인 후 db연결 데이터 삽입*/
 		Connection con = null;
@@ -31,18 +30,17 @@ public class actionSevlet extends HttpServlet {
 		ResultSet rs = null;
 		
 		String sql = "insert into employee(idx,name,address,email,tel) values (?,?,?,?,?)";
-
+		System.out.println("인덱스 값 :"+idx);
 		try {
 			// 1. JDBC 드라이버 로딩
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// 2. Connection 생성
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company?useUnicode=true&serverTimezone=Asia/Seoul", // DB URL
-					"root", "0000"); // USER_NAME과 PASSWORD
+					"root", "0000");// USER_NAME과 PASSWORD
 			// 3. PreparedStatement 객체 생성, 객체 생성시 SQL 문장 저장
 			pstmt = con.prepareStatement(sql);
 			
 			// 4. pstmt.set<데이터타입>(? 순서, 값) ex) setString(), .setInt()...
-			
 			idx = idx +1;
 			pstmt.setInt(1, idx);
 			pstmt.setString(2, name);
@@ -76,6 +74,8 @@ public class actionSevlet extends HttpServlet {
 			}
 			
 		}
+		
+		//response.sendRedirect("list.jsp");
 		
 	}
 
