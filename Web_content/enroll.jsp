@@ -27,7 +27,7 @@
       -->
     <div class="wrap">
         <h1 class="title">직원등록</h1>
-        <form action="enrollAction" method="get"> 
+        <form action="actionSevlet" method="get"> 
             <div class="name_space">
                 <span>이름 : </span><input id="name" name = "name" type="text">
             </div>
