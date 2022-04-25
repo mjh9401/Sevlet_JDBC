@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/actionSevlet")
 public class actionSevlet extends HttpServlet {
-	int idx = 0;
+	//int idx = 0;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -29,8 +29,8 @@ public class actionSevlet extends HttpServlet {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "insert into employee(idx,name,address,email,tel) values (?,?,?,?,?)";
-		System.out.println("인덱스 값 :"+idx);
+		String sql = "insert into employee(name,address,email,tel) values (?,?,?,?)";
+		//System.out.println("인덱스 값 :"+idx);
 		try {
 			// 1. JDBC 드라이버 로딩
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -41,12 +41,12 @@ public class actionSevlet extends HttpServlet {
 			pstmt = con.prepareStatement(sql);
 			
 			// 4. pstmt.set<데이터타입>(? 순서, 값) ex) setString(), .setInt()...
-			idx = idx +1;
-			pstmt.setInt(1, idx);
-			pstmt.setString(2, name);
-			pstmt.setString(3, address);
-			pstmt.setString(4, email);
-			pstmt.setString(5, tel);
+			//idx = idx +1;
+			//pstmt.setInt(1, idx);
+			pstmt.setString(1, name);
+			pstmt.setString(2, address);
+			pstmt.setString(3, email);
+			pstmt.setString(4, tel);
 			
 			// 5. SQL 문장을 실행하고 결과를 리턴 - SQL 문장 실행 후, 변경된 row 수 in type 리턴
 			int row = pstmt.executeUpdate();
@@ -75,7 +75,7 @@ public class actionSevlet extends HttpServlet {
 			
 		}
 		
-		//response.sendRedirect("list.jsp");
+		response.sendRedirect("enroll.jsp");
 		
 	}
 
